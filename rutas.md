@@ -2,7 +2,7 @@
 
 ## Rutas
 
-### GET /user/:id - OK
+### GET /user/:id - 
 
 - **Descripción:** Obtiene un usuario por su id junto con sus turnos.
 - **Parámetros:** id: id del usuario.
@@ -38,7 +38,7 @@
   }
   ```
 
-### POST /user/register - OK
+### POST /user/register - 
 
 - **Descripción:** Crea un nuevo usuario.
 - **Parámetros:**
@@ -54,7 +54,7 @@
   - 201: Si el usuario fue creado.
   - 400: Si los datos son incorrectos.
 
-### POST /users/login - OK
+### POST /users/login - 
 
 - **Descripción:** Inicia sesión de un usuario.
 - **Parámetros:**
@@ -82,7 +82,7 @@
   }
   ```
 
-### GET /appointments/:id - OK
+### GET /appointments/:id - 
 
 - **Descripción:** Obtiene el detalle de un turno.
 
@@ -92,7 +92,7 @@
   - 200: Si el turno fue encontrado.
   - 404: Si el turno no fue encontrado.
 
-### POST /appointments/schedule - OK
+### POST /appointments/schedule - 
 
 - **Descripción:** Crea un nuevo turno.
 - **Parámetros:**
@@ -105,7 +105,7 @@
   - 201: Si el turno fue creado.
   - 400: Si los datos son incorrectos.
 
-### PUT /appointments/cancel/:id -OK
+### PUT /appointments/cancel/:id -
 
 - **Descripción:** Cancela un turno.
 - **Parámetros:** id: id del turno.
@@ -114,7 +114,7 @@
   - 200: Si el turno fue cancelado.
   - 404: Si el turno no fue encontrado.
 
-### GET /appointments - OK
+### GET /appointments -
 
 - **Descripción:** Obtiene todos los turnos.
 

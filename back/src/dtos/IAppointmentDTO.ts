@@ -1,4 +1,4 @@
-import {Status, Procedimiento} from "../interfaces/IAppointment"
+import {Status} from "../interfaces/IAppointment"
 
 
 export interface ICreateAppointmentDTO{
@@ -7,5 +7,5 @@ export interface ICreateAppointmentDTO{
   time: string;
   status: Status;
   userId: number;
-  procedimiento: Procedimiento;
+  
 }

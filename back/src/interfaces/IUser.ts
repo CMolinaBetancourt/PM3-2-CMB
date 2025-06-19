@@ -1,9 +1,9 @@
 interface Iuser {
   id: number,
-  firstName: string,
-  middleName?:string,
-  firstLastName:string,
-  secondLastName?:string,
+  pacientFirstName: string;
+  pacientMiddleName: string;
+  pacientFirstLastName: string;
+  pacientSecondLastName: string;
   birthdate: Date,
   nDni: number,
   parentName: string,

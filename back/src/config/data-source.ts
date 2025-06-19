@@ -1,5 +1,8 @@
 import { DataSource } from "typeorm";
 import { config } from "./envs";
+import { User } from "../entities/User.entity";
+import { Appointment } from "../entities/Appointment.entity";
+import { Credential } from "../entities/Credential.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -13,3 +16,7 @@ export const AppDataSource = new DataSource({
   logging: config.DB_LOGG,
   entities: ["src/entities/**/*.ts"],
 });
+
+export const userRepository = AppDataSource.getRepository(User)
+export const credentialRepository= AppDataSource.getRepository(Credential)
+export const appointmentRepository= AppDataSource.getRepository(Appointment)

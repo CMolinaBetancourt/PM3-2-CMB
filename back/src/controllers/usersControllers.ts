@@ -3,9 +3,10 @@ import {
   createUserService,
   getAllUsersService,
   getUsersByIdService,
+  loginUserService,
 } from "../services/userService";
-import {  IUserResponseDTO } from "../dtos/IUserDTO";
-import { checkUserCredential } from "../services/credentialService";
+import { IUserResponseDTO, UserLoginDTO } from "../dtos/IUserDTO";
+import { PostgresError } from "../interfaces/PostgressErrorInterface";
 
 // GET /users => Obtener el listado de todos los usuarios.
 
@@ -16,7 +17,7 @@ export const getUsersController = async (
   try {
     const users: IUserResponseDTO[] = await getAllUsersService();
     res.status(200).json({
-      message: "Obtener el listado de todos los usuarios",
+      message: "Este es el listado de todos los pacientes",
       data: users,
     });
   } catch (error: unknown) {
@@ -35,11 +36,11 @@ export const getUserByIdController = async (req: Request, res: Response) => {
       Number(id)
     );
     res.status(200).json({
-      message: "Obtener el detalle de un usuario específico",
+      message: "Esta es la información del usuario",
       data: user,
     });
   } catch (error: unknown) {
-    res.status(500).json({
+    res.status(404).json({
       message: "Ocurrió un error",
       error: error instanceof Error ? error.message : "Error desconocido",
     });
@@ -50,29 +51,38 @@ export const getUserByIdController = async (req: Request, res: Response) => {
 export const registerController = async (req: Request, res: Response) => {
   try {
     const newUser: IUserResponseDTO = await createUserService(req.body);
-    res.status(200).json({
-      message: "Registro de un nuevo usuario",
+    res.status(201).json({
+      message: "El usuario fue creado exitosamente",
       data: newUser,
     });
   } catch (error: unknown) {
-    res.status(500).json({
+    const err = error as PostgresError;
+    res.status(400).json({
       message: "Ocurrió un error",
-      error: error instanceof Error ? error.message : "Error desconocido",
+      error:
+        error instanceof Error
+          ? err.detail
+            ? err.detail
+            : err.message
+          : "Error desconocido",
     });
   }
 };
 
 // POST /users/login => Login del usuario a la aplicación.
-export const loginController = async (req: Request, res: Response) => {
+export const loginController = async (req: Request<unknown, unknown, UserLoginDTO>, res: Response) => {
   try {
-    const {username, password} = req.body
-    const CredentialId= await checkUserCredential (username, password);
-    res.status(200).json({
-      message: "Login del usuario a la aplicación",
-      data: CredentialId,
-    });
+    const { username, password } = req.body;
+    const CredentialId = await loginUserService({username, password});
+    res
+      .status(200)
+      .json({
+        message: "Usuario logeado exitósamente",
+        login: true,
+        user: CredentialId,
+      });
   } catch (error: unknown) {
-    res.status(500).json({
+    res.status(400).json({
       message: "Ocurrió un error",
       error: error instanceof Error ? error.message : "Error desconocido",
     });

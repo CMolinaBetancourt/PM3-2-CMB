@@ -1,21 +1,26 @@
-export interface IUserResponseDTO  {
-  id: number,
-  firstName: string,
-  firstLastName:string,
-  email: string,
-  
+import { Appointment } from "../entities/Appointment.entity";
+
+export interface IUserResponseDTO {
+  id: number;
+  pacientFirstName: string;
+  pacientFirstLastName: string;
+  email: string;
+  appointments: Appointment[]
 }
 
 export interface IUserRegisterDTO {
-  firstName: string,
-  middleName?:string,
-  firstLastName:string,
-  secondLastName?:string,
-  birthdate: Date,
-  nDni: number,
-  parentName: string,
-  parentLastName: string,
-  email: string,
+  pacientFirstName: string;
+  pacientFirstLastName: string;
+  birthdate: Date;
+  nDni: number;
+  parentName: string;
+  parentLastName: string;
+  email: string;
+  username: string;
+  password: string;
+}
+
+export interface UserLoginDTO {
   username: string;
   password: string;
 }

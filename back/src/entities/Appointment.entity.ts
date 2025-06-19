@@ -14,12 +14,6 @@ export enum Status {
   CANCELLED = "cancelada",
 }
 
-export enum Procedimiento {
-  LIMPIEZA = "limpieza",
-  CIRUGIA = "cirugía",
-  RADIOGRAFIA = "radiografía",
-}
-
 @Entity({ name: "appointments" })
 export class Appointment {
   @PrimaryGeneratedColumn()
@@ -37,13 +31,6 @@ export class Appointment {
     default: Status.ACTIVE,
   })
   status: Status;
-
-  @Column({
-    type: "enum",
-    enum: Procedimiento,
-    nullable: false,
-  })
-  procedimiento: Procedimiento;
 
   @ManyToOne(() => User, (user) => user.appointments)
   @JoinColumn()

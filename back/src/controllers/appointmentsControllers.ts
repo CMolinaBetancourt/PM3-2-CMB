@@ -1,21 +1,18 @@
 import { Request, Response } from "express";
-import IAppointment from "../interfaces/IAppointment";
 import {
   cancelAppointmentService,
   createAppointmentService,
   getAllAppointmentsService,
   getAppointmentByIdService,
 } from "../services/appointmentService";
+import { Appointment } from "../entities/Appointment.entity";
 
 // GET /appointments => Obtener el listado de todos los turnos de todos los usuarios.
-export const getAllAppointmentController = async (
-  _req: Request,
-  res: Response
-) => {
+export const getAllAppointmentController = async (_req: Request,res: Response) => {
   try {
-    const appointments: IAppointment[] = await getAllAppointmentsService();
+    const appointments: Appointment[] = await getAllAppointmentsService();
     res.status(200).json({
-      message: "Obtener el listado de todas las citas de todos los usuarios",
+      message: "Este es el listado de todas las citas, de todos los pacientes",
       data: appointments,
     });
   } catch (error: unknown) {
@@ -27,17 +24,14 @@ export const getAllAppointmentController = async (
 };
 
 // GET /appointments => Obtener el detalle de un turno específico.
-export const getAppointmentByIdController = async (
-  req: Request,
-  res: Response
-) => {
+export const getAppointmentByIdController = async (req: Request, res: Response) => {
   try {
     const id = req.params.id; // tengo que enviarle el id y debe ser tipo number
-    const appointment: IAppointment = await getAppointmentByIdService(
+    const appointment: Appointment = await getAppointmentByIdService(
       Number(id)
     );
     res.status(200).json({
-      message: "Obtener el detalle de una cita específica.",
+      message: "Esta es la información de la cita específica.",
       data: appointment,
     });
   } catch (error: unknown) {
@@ -49,16 +43,13 @@ export const getAppointmentByIdController = async (
 };
 
 // POST /appointments/schedule => Agendar un nuevo turno.
-export const scheduleAppointmentController = async (
-  req: Request,
-  res: Response
-) => {
+export const scheduleAppointmentController = async (req: Request,res: Response) => {
   try {
-    const newAppointment: IAppointment = await createAppointmentService(
+    const newAppointment: Appointment = await createAppointmentService(
       req.body
     );
     res.status(200).json({
-      message: "Agendar una nueva cita",
+      message: "La cita fue agendada exitosamente",
       data: newAppointment,
     });
   } catch (error: unknown) {
@@ -70,16 +61,13 @@ export const scheduleAppointmentController = async (
 };
 
 // PUT /appointments/cancel => Cambiar el estatus de un turno a “cancelled”.
-export const cancelAppointmentController = async (
-  req: Request,
-  res: Response
-) => {
+export const cancelAppointmentController = async (req: Request<{id:string}>, res: Response):Promise<void> => {
   try {
     const id = req.params.id; // tengo que enviarle el id y debe ser tipo number
-    const appointmentId: number = await cancelAppointmentService(Number(id));
+    await cancelAppointmentService(Number(id));
     res.status(200).json({
-      message: "Cambiar el estatus de una cita a cancelada.",
-      data: appointmentId,
+      message: "La cita ha sido cancelada.",
+      
     });
   } catch (error: unknown) {
     res.status(500).json({
