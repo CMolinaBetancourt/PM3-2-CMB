@@ -1,0 +1,39 @@
+.navbarcontainer{
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 70px;
+padding: 0 40px;
+background: #ffdddd;
+position: fixed;
+width: calc(100% - 80px);
+}
+
+.navbarcontainer > img{
+    width: 300px;
+}
+
+.navbarlinks{
+   list-style: none;
+   display: flex; 
+   gap: 20px;
+}
+
+.navbarlinks > li{
+  color: #0fa5a5;
+  font-family: Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.navbarlinks > li > a{
+  text-decoration: none;
+  color: #222222;
+  font-size: 20px;
+}
+
+.navbarlinks > li > a:hover{
+  opacity: 1;
+  
+  
+}
