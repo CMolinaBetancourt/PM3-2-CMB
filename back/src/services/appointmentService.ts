@@ -48,6 +48,10 @@ export const getAllAppointmentsService = async (
     };
   }
   const appointments: Appointment[] = await appointmentRepository.find(options);
+
+  if (!appointments.length) {
+    throw new Error(`No existen citas`);
+  }
   return appointments;
 };
 
@@ -87,7 +91,6 @@ export const createAppointmentService = async (
     time: appointmentDTO.time,
     status: Status.ACTIVE,
     user: userFound,
-    
   });
   const results = await AppointmentRepository.save(newAppointment);
   return results;

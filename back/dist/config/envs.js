@@ -12,6 +12,8 @@ exports.config = {
     DB_USERNAME: process.env.DB_USERNAME,
     DB_NAME: process.env.DB_NAME,
     DB_SYNC: process.env.DB_SYNC ? process.env.DB_SYNC === "true" : true,
-    DB_DROPSCHEMA: process.env.DB_DROPSCHEMA ? process.env.DB_DROPSCHEMA === "true" : true,
+    DB_DROPSCHEMA: process.env.DB_DROPSCHEMA
+        ? process.env.DB_DROPSCHEMA === "true"
+        : true,
     DB_LOGG: process.env.DB_LOGG ? process.env.DB_LOGG === "true" : true,
 };

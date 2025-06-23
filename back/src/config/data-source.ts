@@ -17,6 +17,6 @@ export const AppDataSource = new DataSource({
   entities: ["src/entities/**/*.ts"],
 });
 
-export const userRepository = AppDataSource.getRepository(User)
-export const credentialRepository= AppDataSource.getRepository(Credential)
-export const appointmentRepository= AppDataSource.getRepository(Appointment)
+export const userRepository = AppDataSource.getRepository(User);
+export const credentialRepository = AppDataSource.getRepository(Credential);
+export const appointmentRepository = AppDataSource.getRepository(Appointment);

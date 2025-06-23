@@ -26,15 +26,15 @@ __decorate([
 ], User.prototype, "pacientFirstName", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: true }),
-    __metadata("design:type", String)
+    __metadata("design:type", Object)
 ], User.prototype, "pacientMiddleName", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: false }),
     __metadata("design:type", String)
 ], User.prototype, "pacientFirstLastName", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: false }),
-    __metadata("design:type", String)
+    (0, typeorm_1.Column)({ type: "varchar", length: 100, nullable: true }),
+    __metadata("design:type", Object)
 ], User.prototype, "pacientSecondLastName", void 0);
 __decorate([
     (0, typeorm_1.Column)({ type: "date", nullable: false }),

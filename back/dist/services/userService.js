@@ -112,8 +112,8 @@ const loginUserService = (userCredentials) => __awaiter(void 0, void 0, void 0, 
     }
     return {
         id: userFound.id,
-        firstName: userFound.pacientFirstName,
-        firstLastName: userFound.pacientFirstLastName,
+        pacientFirstName: userFound.pacientFirstName,
+        pacientFirstLastName: userFound.pacientFirstLastName,
         email: userFound.email,
         appointments: userFound.appointments,
     };

@@ -16,7 +16,7 @@ const getAllAppointmentController = (_req, res) => __awaiter(void 0, void 0, voi
     try {
         const appointments = yield (0, appointmentService_1.getAllAppointmentsService)();
         res.status(200).json({
-            message: "Obtener el listado de todas las citas de todos los usuarios",
+            message: "Este es el listado de todas las citas, de todos los pacientes",
             data: appointments,
         });
     }
@@ -34,7 +34,7 @@ const getAppointmentByIdController = (req, res) => __awaiter(void 0, void 0, voi
         const id = req.params.id; // tengo que enviarle el id y debe ser tipo number
         const appointment = yield (0, appointmentService_1.getAppointmentByIdService)(Number(id));
         res.status(200).json({
-            message: "Obtener el detalle de una cita específica.",
+            message: "Esta es la información de la cita específica.",
             data: appointment,
         });
     }
@@ -51,7 +51,7 @@ const scheduleAppointmentController = (req, res) => __awaiter(void 0, void 0, vo
     try {
         const newAppointment = yield (0, appointmentService_1.createAppointmentService)(req.body);
         res.status(200).json({
-            message: "Agendar una nueva cita",
+            message: "La cita fue agendada exitosamente",
             data: newAppointment,
         });
     }
@@ -69,7 +69,7 @@ const cancelAppointmentController = (req, res) => __awaiter(void 0, void 0, void
         const id = req.params.id; // tengo que enviarle el id y debe ser tipo number
         yield (0, appointmentService_1.cancelAppointmentService)(Number(id));
         res.status(200).json({
-            message: "Cambiar el estatus de una cita a cancelada.",
+            message: "La cita ha sido cancelada.",
         });
     }
     catch (error) {

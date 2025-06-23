@@ -53,6 +53,9 @@ const getAllAppointmentsService = (...args_1) => __awaiter(void 0, [...args_1], 
         };
     }
     const appointments = yield data_source_1.appointmentRepository.find(options);
+    if (!appointments.length) {
+        throw new Error(`No existen citas`);
+    }
     return appointments;
 });
 exports.getAllAppointmentsService = getAllAppointmentsService;

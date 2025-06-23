@@ -7,12 +7,14 @@ function Home() {
       <div className={style.homeContainer}>
         <div className={style.homeTextContainer}>
           <h1>¡La sonrisa saludable de tus hijos es nuestro tesoro!</h1>
-          <p>
+         <p>
             En Doctor Muelitas, sabemos que cada pequeño merece una experiencia
             dental feliz y libre de miedos. Por eso, hemos creado un espacio
             donde el cuidado oral se convierte en una aventura positiva y
             divertida desde el primer día.
-            <br />
+          </p>
+          <br/>
+          <p>
             Establecer una rutina de visitas al dentista desde la infancia es la
             clave para sembrar las bases de una sonrisa sana y fuerte para toda
             la vida. Recomendamos que la primera visita de tu hijo sea entre su
@@ -20,13 +22,17 @@ function Home() {
             detectar y atender cualquier detalle a tiempo, mientras
             acostumbramos a los niños a nuestro amigable equipo y a un entorno
             dental lúdico.
-            <br />
-            ¡Así, las futuras visitas serán algo esperado y positivo,
-            construyendo una relación de confianza que durará para siempre!.
           </p>
+          <p>
+          
+          </p>
+          <div className={style.homeButtonContainer}>
+            <button className={style.homeButton}>Reserva tu cita</button>
+            </div>
         </div>
         <img src={homeImage} alt="imageChildren" />
       </div>
+      
     </div>
   );
 }

@@ -16,7 +16,7 @@ const getUsersController = (_req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const users = yield (0, userService_1.getAllUsersService)();
         res.status(200).json({
-            message: "Obtener el listado de todos los usuarios",
+            message: "Este es el listado de todos los pacientes",
             data: users,
         });
     }
@@ -34,7 +34,7 @@ const getUserByIdController = (req, res) => __awaiter(void 0, void 0, void 0, fu
         const id = req.params.id; // tengo que enviarle el id y debe ser tipo number
         const user = yield (0, userService_1.getUsersByIdService)(Number(id));
         res.status(200).json({
-            message: "Obtener el detalle de un usuario específico",
+            message: "Esta es la información del usuario",
             data: user,
         });
     }

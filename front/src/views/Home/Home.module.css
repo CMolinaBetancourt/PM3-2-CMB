@@ -1,43 +1,68 @@
 /* Home.module.css */
-.homeContainer{
+.homeContainer {
   min-height: calc(100vh);
-  background: radial-gradient(#ffdddd, #FDF6BF);
+  background: radial-gradient(#ffdddd, #fdf6bf);
   display: flex;
-  flex-direction: row; /* CAMBIO CLAVE: Los elementos se alinearán en una fila */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-    gap: 50px; /* Espacio entre el contenedor de texto y la imagen */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
-.homeTextContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    width: 50%; 
-    max-width: 600px; 
+.homeTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50%;
+  max-width: 600px;
 }
 
-.homeTextContainer >h1{
-    font-size: 35px;
-    margin-bottom: 20px;
-    font-family: Arial, sans-serif;
-    color: #333; 
-    
+.homeTextContainer > h1 {
+  font-size: 35px;
+  margin-bottom: 10px;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
-.homeTextContainer >p{
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-family: Arial, sans-serif;
-    line-height: 1.6; 
-    color: #555; 
+.homeTextContainer > p {
+  font-size: 18px;
+  margin-bottom: 0px;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #555;
 }
 
-
-.homeContainer > img{
-    width: 40%; 
-    max-width: 500px; 
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    border-radius: 20px ;
+.homeContainer > img {
+  width: 40%;
+  max-width: 500px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 20px;
 }
+
+.homeButton{
+background-color: #82cbd1;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 0px;
+   box-shadow: 0 5px 15px rgba(184, 180, 180, 0.5);
+  
+}
+
+.homeButton:hover {
+  background-color: #ECA6B0 ;
+  transform: translateY(-2px);
+  }
+
+  .homeButtonContainer{
+width: 100%; /* Ensure it takes full width of its parent */
+  display: flex;
+  justify-content: center; /* Centers content horizontally */
+  margin-top: 10px;
+
+  }
