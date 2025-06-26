@@ -3,6 +3,7 @@ import styles from "./MyAppointments.module.css";
 import AppointmentCard from "../../components/AppointmentCard/AppointmentCard";
 import axios from "axios";
 
+
 function MyAppointments() {
   const [appointments, setAppointments] = useState([]);
   const [error, setError] = useState(null);

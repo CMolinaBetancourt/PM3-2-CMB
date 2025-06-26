@@ -28,14 +28,14 @@
 }
 
 .appointmentHeader h3 {
-  color: #82cbd1;
+  color: #7acbd2;
   font-size: 1.6rem;
   margin: 0;
   font: "Arial Narrow", Arial, sans-serif;
 }
 
 .statusActive {
-  background-color: #fbbbd394;
+  background-color: #f7b1cb94;
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -75,15 +75,17 @@
 }
 
 .cancelButton {
-  background-color: #f8e028;
+  background-color: #f8de1e;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   margin-top: 15px;
+  
 }
 
 .cancelButton:hover {

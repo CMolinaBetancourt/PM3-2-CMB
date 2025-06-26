@@ -14,7 +14,8 @@ export const AppDataSource = new DataSource({
   synchronize: config.DB_SYNC,
   dropSchema: config.DB_DROPSCHEMA,
   logging: config.DB_LOGG,
-  entities: ["src/entities/**/*.ts"],
+  //entities: ["src/entities/**/*.ts"],
+  entities: [User, Appointment, Credential],
 });
 
 export const userRepository = AppDataSource.getRepository(User);

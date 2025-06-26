@@ -1,0 +1,170 @@
+.loginContainer {
+  min-height: calc(100vh);
+  background: radial-gradient(#ffdddd, #fdf6bf);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+.loginCard {
+  background-color: #ffffff; 
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+  width: 100%;
+  max-width: 500px; 
+  box-sizing: border-box;
+  text-align: center; 
+  margin: 2rem auto;
+  font-family: Arial sans-serif, sans-serif;
+}
+
+.loginHeader {
+  margin-bottom: 2rem;
+}
+
+.logo {
+      width: 350px;
+    height: 60px;
+    display: block; /* Importante: la imagen o div debe ser un elemento de bloque */
+    margin: 0 auto;
+}
+
+
+.loginHeader h2 {
+  color: #fa7791; 
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0;
+   border-bottom: 3px solid rgba(58, 27, 212, 0.1);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem; 
+  text-align: left; 
+}
+
+.formLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #34495e; 
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  background-color: #fff;
+  color: #34495e;
+}
+
+.formInput::placeholder {
+  color: #95a5a6;
+  font-style: italic;
+}
+
+.formInput:focus {
+  border-color: #7f8c8d;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(127, 140, 141, 0.1);
+}
+
+
+
+.submitButton {
+  background-color: #fa7791; 
+  color: #ffffff; 
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submitButton:disabled {
+  background-color: #bdc3c7;
+  color: #ffffff;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #82cbd1; 
+  transform: translateY(-1px); 
+  box-shadow: 0 4px 12px rgba(127, 140, 141, 0.3);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(233, 53, 8, 0.3);
+}
+
+.error {
+  color: #fa7791; 
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+  font-weight: 400;
+  display: block;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .loginContainer {
+    padding: 1rem;
+  }
+  
+  .loginCard {
+    margin: 1rem;
+    padding: 2rem 1.5rem;
+    max-width: none;
+  }
+  
+  .loginHeader h2 {
+    font-size: 1.5rem;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loginContainer {
+    padding: 0.5rem;
+  }
+  
+  .loginCard {
+    margin: 0.5rem;
+    padding: 1.5rem 1rem;
+  }
+  
+  .loginHeader h2 {
+    font-size: 1.3rem;
+  }
+  
+  .formInput {
+    padding: 0.625rem 0.875rem;
+  }
+  
+  .submitButton {
+    padding: 0.75rem 1.25rem;
+  }
+}
